@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { TextInput, View, TouchableOpacity, FlatList, Text, Image } from 'react-native';
+import { View, TouchableOpacity, FlatList, Text, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { styles } from './style';
 import { useNavigation } from "@react-navigation/native";
