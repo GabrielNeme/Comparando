@@ -10,7 +10,7 @@ export default function SearchScreen() {
   const [selectedCategory, setSelectedCategory] = useState<string>('');
 
   const products = [
-    { name: 'Filé Mignon', image: require('../../../assets/busca/file_mignon.png') },
+    { name: 'Filé Mignon Suíno', image: require('../../../assets/busca/file_mignon.png') },
     { name: 'Picanha', image: require('../../../assets/busca/carnes.png') },
     { name: 'Alcatra', image: require('../../../assets/busca/alcatra.png') },
     { name: 'Coxão Mole', image: require('../../../assets/busca/coxao_mole.png') },
