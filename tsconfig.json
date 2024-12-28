@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "esnext",      // Define a versão do JavaScript para a qual o TypeScript irá compilar.
+    "module": "commonjs",    // Define o sistema de módulos a ser utilizado.
+    "strict": true,          // Habilita todas as opções de verificação estrita.
+    "jsx": "react-native",   // Define como o JSX será compilado.
+    "moduleResolution": "node", // Resolve módulos de acordo com a especificação do Node.
+    "baseUrl": ".",          // Define a base do diretório do seu projeto.
+    "paths": {               // Permite mapear paths para módulos.
+      "@/*": ["src/*"]
+    }
+  },
+  "exclude": ["node_modules"], // Exclui o diretório node_modules.
+  "extends": "expo/tsconfig.base" // Extende as configurações base do Expo.
+}
