@@ -6,8 +6,8 @@ import { useNavigation } from "@react-navigation/native";
 
 export default function SearchScreen() {
   const navigation = useNavigation() as any;
-  const [searchQuery, setSearchQuery] = useState<string>('');
-  const [selectedCategory, setSelectedCategory] = useState<string>('');
+  const [searchQuery] = useState<string>('');
+  const [selectedCategory] = useState<string>('');
 
   const products = [
     { name: 'Laranja Lima', image: require('../../../assets/busca/laranja.png') },
@@ -25,7 +25,7 @@ export default function SearchScreen() {
 
   const renderProductItem = ({ item, index }: { item: { name: string; image: any }; index: number }) => {
     const isSelected = selectedCategory === item.name;
-    const isLastItem = index === filteredProducts.length - 1; // Verifica se é o último item da lista
+    const isLastItem = index === filteredProducts.length - 1;
   
     return (
       <TouchableOpacity
@@ -61,7 +61,6 @@ export default function SearchScreen() {
 
   return (
     <View style={styles.container}>
-      {/* Botão de voltar */}
       <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
         <Ionicons name="arrow-back" size={24} color="#000" />
       </TouchableOpacity>

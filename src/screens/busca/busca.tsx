@@ -7,7 +7,7 @@ import { useNavigation } from "@react-navigation/native";
 export default function SearchScreen() {
   const navigation = useNavigation() as any;
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const [selectedCategory, setSelectedCategory] = useState<string>('');
+  const [selectedCategory] = useState<string>('');
 
   const products = [
     { name: 'Laranja Lima', image: require('../../../assets/busca/laranja.png') },

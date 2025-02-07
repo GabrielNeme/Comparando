@@ -35,6 +35,23 @@ export const styles = StyleSheet.create({
     marginLeft: 200,
     resizeMode: 'contain',
   },
+  // Estilos para o cart badge
+  cartBadge: {
+    position: 'absolute',
+    top: -5,
+    right: -5,
+    backgroundColor: '#FF0000',
+    width: 20,
+    height: 20,
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  cartBadgeText: {
+    color: '#fff',
+    fontSize: 12,
+    fontWeight: 'bold',
+  },
   title: {
     fontSize: 28,
     marginTop: 22,
@@ -59,7 +76,6 @@ export const styles = StyleSheet.create({
     borderRadius: 20,
     marginBottom: 10,
   },
-  // Contêiner das Categorias e Botões
   categoriesContainer: {
     marginBottom: 10,
   },
@@ -93,7 +109,7 @@ export const styles = StyleSheet.create({
   },
   categoryImage: {
     width: 40,
-    height: 40,  // Ajuste conforme o tamanho da imagem desejado
+    height: 40, 
     resizeMode: 'contain',
   },
   categoryText: {

@@ -5,8 +5,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { enableScreens } from 'react-native-screens';
 import Toast from 'react-native-toast-message';
 
-
-// Importando componentes
 import TabBarIcon from './src/screens/components/TabBarIcon';
 import LoginScreen from './src/screens/login/Login';
 import CadastroScreen from './src/screens/cadastro/Cadastro';
@@ -19,8 +17,8 @@ import LaranjaScreen from './src/screens/Laranja/laranja';
 import MacaScreen from './src/screens/maçã/maca';
 import ToddyScreen from './src/screens/toddy/toddy';
 import MelanciaScreen from './src/screens/melancia/melancia';
-import FrutasScreen from './src/screens/frutas/frutas';
-import CarnesScreen from './src/screens/carnes/carnes';
+import FrutasScreen from './src/screens/frutas/Frutas';
+import CarnesScreen from './src/screens/carnes/Carnes';
 
 enableScreens();
 
@@ -71,77 +69,81 @@ function TabRoutes() {
           ),
         }}
       />
-      {/* Adicione outras telas no Tab Navigator, se necessário */}
     </Tab.Navigator>
   );
 }
 
 export default function App() {
   return (
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName="Login">
-          <Stack.Screen
-            name="Login"
-            component={LoginScreen}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Cadastro"
-            component={CadastroScreen}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="MainTabs"
-            component={TabRoutes}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Perfil"
-            component={PerfilScreen}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Frutas"
-            component={FrutasScreen}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Carnes"
-            component={CarnesScreen}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="picanha"
-            component={PicanhaScreen}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Alface"
-            component={AlfaceScreen}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="laranja"
-            component={LaranjaScreen}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="maca"
-            component={MacaScreen}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="toddy"
-            component={ToddyScreen}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="melancia"
-            component={MelanciaScreen}
-            options={{ headerShown: false }}
-          />
-        </Stack.Navigator>
-        <Toast />
-      </NavigationContainer>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen
+          name="Login"
+          component={LoginScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Cadastro"
+          component={CadastroScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="MainTabs"
+          component={TabRoutes}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Perfil"
+          component={PerfilScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Frutas"
+          component={FrutasScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Carnes"
+          component={CarnesScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="picanha"
+          component={PicanhaScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Alface"
+          component={AlfaceScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="laranja"
+          component={LaranjaScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="maca"
+          component={MacaScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="toddy"
+          component={ToddyScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="melancia"
+          component={MelanciaScreen}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
+      <Toast />
+    </NavigationContainer>
   );
 }

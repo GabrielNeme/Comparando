@@ -9,7 +9,6 @@ export default function FeedScreen() {
     { id: '1', image: require('../../../assets/feed/promocao1.png') },
   ];
 
-  // Dados das categorias com suas respectivas imagens e telas de destino
   const categories = [
     { id: '1', name: 'Frutas', icon: require('../../../assets/feed/icon_frutas.png'), screen: 'FrutasScreen' },
     { id: '2', name: 'Carnes', icon: require('../../../assets/feed/icon_carnes.png'), screen: 'CarnesScreen' },
@@ -19,10 +18,9 @@ export default function FeedScreen() {
     { id: '6', name: 'Outros', icon: require('../../../assets/feed/icon_outros.png'), screen: 'OutrosScreen' },
   ];
 
-  // Função para renderizar itens da lista de categorias
   const renderCategoryItem = ({ item }: { item: { id: string; name: string; icon: any; screen: string } }) => {
     const handlePress = () => {
-      navigation.navigate(item.name); // Navegar para a tela associada
+      navigation.navigate(item.name as never);
     };
 
     return (
@@ -63,7 +61,6 @@ export default function FeedScreen() {
         showsVerticalScrollIndicator={false}
       />
 
-      {/* Contêiner de Categorias e Botões */}
       <View style={styles.categoriesContainer}>
         <Text style={styles.categoryTitle}>Categorias</Text>
 

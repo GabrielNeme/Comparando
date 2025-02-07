@@ -4,6 +4,7 @@ import { FontAwesome, Ionicons } from '@expo/vector-icons';
 import { styles } from './style';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
+import Toast from 'react-native-toast-message';
 
 const marketList = [
   { id: '1', name: 'Carrefour', address: 'Rua xxxxxxxx, xxx', price: 'R$ 4,99/Kg' },
@@ -15,7 +16,9 @@ export default function ProductList() {
   const navigation = useNavigation();
   const [markets, setMarkets] = useState(marketList);
   const [sortOption, setSortOption] = useState('price');
-  const [isFavorite, setIsFavorite] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);  
+  const product = "Maçã"
+
 
   const sortMarkets = (option: string) => {
     const sortedMarkets = [...markets].sort((a, b) => {
@@ -29,14 +32,21 @@ export default function ProductList() {
     setSortOption(option);
   };
 
-  return (
+  const handleAddToCart = (product: string) => {
+      Toast.show({
+        type: 'success',
+        text1: 'Produto Adicionado!',
+        text2: `${product} foi adicionado ao carrinho.`,
+        position: 'bottom',
+      });
+    };
+
+return (
     <SafeAreaView style={styles.container}>
-      {/* Botão de voltar */}
       <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
         <Ionicons name="arrow-back" size={24} color="black" />
       </TouchableOpacity>
 
-      {/* Produto em destaque */}
       <View style={styles.productHighlight}>
         <Text style={styles.productTitle}>Maçã</Text>
         <Image source={require('../../../assets/busca/maça.png')} style={styles.productImage} />
@@ -45,7 +55,6 @@ export default function ProductList() {
         </TouchableOpacity>
       </View>
 
-      {/* Opções de ordenação */}
       <View style={styles.sortOptions}>
         <TouchableOpacity onPress={() => sortMarkets('price')} style={styles.sortButton}>
           <Text style={sortOption === 'price' ? styles.activeSortText : styles.sortText}>Preço</Text>
@@ -55,7 +64,6 @@ export default function ProductList() {
         </TouchableOpacity>
       </View>
 
-      {/* Lista de mercados */}
       <ScrollView contentContainerStyle={styles.marketList}>
         {markets.map((market) => (
           <View key={market.id} style={styles.marketCard}>
@@ -64,7 +72,9 @@ export default function ProductList() {
               <Text style={styles.marketAddress}>{market.address}</Text>
               <Text style={styles.marketPrice}>{market.price}</Text>
             </View>
-            <TouchableOpacity style={styles.addToCartButton}>
+            <TouchableOpacity
+              style={styles.addToCartButton}
+              onPress={() => handleAddToCart(product)}>
               <Text style={styles.addToCartText}>Adicionar ao carrinho</Text>
             </TouchableOpacity>
           </View>
